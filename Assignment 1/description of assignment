@@ -1,0 +1,31 @@
+# Multi-Gateway Payment Processing Engine
+
+A simple Python project that processes payments through different gateways (Stripe, Razorpay) using
+different methods (Card, UPI). It is built with OOP and the Factory design pattern.
+
+## How it works
+1. The user picks a gateway (stripe / razorpay).
+2. The user picks a payment method (card / upi).
+3. The user enters the card number or UPI ID, and the amount.
+4. The program creates the right objects through factories and makes the payment.
+
+## Concepts used
+- Abstract classes : (`ABC`, `@abstractmethod`): `PaymentMethod` defines `get_details()` and `pay()`.
+    
+- Inheritance : Card and UPI classes extend `PaymentMethod`.
+    
+- Factory pattern : `StripeFactory`, `RazorpayFactory` and `AggregatorFactory` create objects from 
+                     a dictionary, so there is no `if/else`.
+      
+- Delegation : The aggregator asks its factory to create the payment object and then calls `pay()`.
+    
+- `**kwargs` : Card or UPI details are passed down to the constructor.
+    
+- Exception handling : An invalid choice shows an error instead of crashing.
+
+## Run
+python payment_basic.py
+
+## Adding a new gateway (e.g. PayPal)
+Create its payment classes, a factory and an aggregator, then add one entry to `AggregatorFactory.factory`.
+Existing code stays unchanged.
