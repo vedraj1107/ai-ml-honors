@@ -24,7 +24,7 @@ different methods (Card, UPI). It is built with OOP and the Factory design patte
 - Exception handling : An invalid choice shows an error instead of crashing.
 
 ## Run
-python payment_basic.py
+python payment_engine.py
 
 ## Adding a new gateway (e.g. PayPal)
 Create its payment classes, a factory and an aggregator, then add one entry to `AggregatorFactory.factory`.
