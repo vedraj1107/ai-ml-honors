@@ -28,4 +28,4 @@
 - `employee.csv`: data file, created automatically
 
 ## Run
-python employee_basic.py
+python employee_csv.py
