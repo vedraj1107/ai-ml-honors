@@ -1,0 +1,50 @@
+# Employee Management System (SQLite CRUD)
+
+~A menu-driven Python program that performs CRUD operations on an employee table stored in an SQLite database.
+~Built with a single class.
+
+## Features
+1. Add a new employee (duplicate IDs are rejected)
+2. View all employees
+3. Search an employee by ID
+4. Update an employee's name, department and salary
+5. Delete an employee
+6. Exit
+
+## Database
+~ File: `employee.db` (created automatically on first run)
+~ Table: `employee`
+
+| Column | Type    | Description         |
+
+## How it works
+- The `Employee` class connects to `employee.db` and creates the `employee` table if it does not exist.
+- `find(id)` is a helper that returns the matching row or `None`. Add, search, update and delete all use it.
+- Add: checks `find()` first. Prints `ID already exists` for a duplicate, otherwise inserts the row
+- View: selects all rows and prints each one as a tuple.
+- Search: prints the row, or `Not found`.
+- Update: if the ID exists, changes name, dept and salary of that row. Otherwise prints `Not found`.
+- Delete: if the ID exists, removes that row. Otherwise prints `Not found`.
+- Every query uses`?` placeholders, so user input is never joined into the SQL string.
+- `commit()` runs after every insert, update and delete, so data stays saved between runs.
+- Update and delete run one SQL statement on the matching row. Nothing is rewritten.
+- A `while True` menu runs until the user chooses 6. Any other input prints `Invalid choice`.
+
+## Concepts used
+- Classes and methods: all operations are grouped inside the `Employee` class.
+- sqlite3 module: `connect`, `cursor`, `execute`, `fetchone`, `fetchall`, `commit`.
+- SQL: `CREATE TABLE IF NOT EXISTS`, `INSERT`, `SELECT`, `UPDATE`, `DELETE`, `WHERE`.
+- Parameterized queries: `?` placeholders to pass values safely.
+- CRUD: Create, Read, Update, Delete
+- Code reuse: one `find()` method shared by four operations.
+- Menu-driven program: `while True` with `if/elif/else` and `break`.
+
+## Project structure
+- `employee_db_final.py`: main program
+- `employee.db`: database file, created automatically in the same folder
+
+## Requirements
+Python 3. No extra installs, `sqlite3` comes with Python.
+
+## Run
+python employee_db.py
