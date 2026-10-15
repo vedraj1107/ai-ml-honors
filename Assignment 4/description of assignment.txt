@@ -1,0 +1,33 @@
+# Employee Management System (Pandas CRUD)
+
+~A menu-driven Python program that performs CRUD operations on employee table stored in a CSV file.
+~built using pandas DataFrame and functions.
+
+## Features
+1. Add a new employee
+2. View all employees
+3. Search an employee by ID
+4. Update an employee's details
+5. Delete an employee
+6. Exit
+
+## How it works
+- On first run, the CSV file is created automatically with the columns `id, name, dept, salary`.
+- Data is loaded into a pandas DataFrame using `pd.read_csv()`.
+- A `while True` menu lets the user pick an option until they choose Exit.
+- Add, update and delete change the DataFrame and then save it back using `to_csv()`.
+
+## Concepts used
+- **pandas DataFrame:** table-like structure to hold employee data.
+- **Reading/Writing:** `pd.read_csv()` to load, `df.to_csv()` to save.
+- **Filtering:** `df[df["id"] == eid]` to search a row by condition.
+- **CRUD:** Create, Read, Update, Delete.
+- **Functions:** each operation has its own function.
+- **Menu-driven program:** `while True` with `if/elif` and `break`.
+
+## Project structure
+- `employee_pandas.py`: main program
+- `employee_pandas.csv`: data file, created automatically
+
+## Run
+python employee_pandas.py
