@@ -1,0 +1,29 @@
+# Decorator Output Formatter (Python)
+
+~A Python program that uses a decorator to print the input and output of any function in a fixed format.
+~built using nested functions and the @ decorator syntax.
+  
+## Features
+1. Decorator takes a title as argument
+2. Works on any function with any number of arguments
+3. Prints input and output in a fixed boxed format
+4. Applied on add, subtract and multiply functions
+
+## How it works
+- `output_decorator(title)` returns the actual decorator.
+- The decorator wraps the function inside a `wrapper()` function.
+- `wrapper()` calls the original function, then prints title, input and output.
+- The original result is also returned, so the function still works normally.
+
+## Concepts used
+- **Decorators:** add extra behaviour to a function without changing its code.
+- **Decorator with arguments:** 3 nested functions (title -> func -> wrapper).
+- **\*args:** accepts any number of arguments.
+- **Closures:** inner function remembers `title` and `func`.
+- **@ syntax:** `@output_decorator("Adding")` placed above the function.
+
+## Project structure
+- `decorator.py`: main program
+
+## Run
+python decorator.py
