@@ -1,0 +1,9 @@
+                                ## assignment-5 ##
+
+Write a Python decorator output_decorator(title) that prints any function's input and output in this format:
+ex:
+    #########################
+    # Adding
+    # input: 4, 3
+    # output: 7
+    #########################
